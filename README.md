@@ -1,3 +1,10 @@
+### ProductsContainer
+
+- override styles via props
+- use of containers and components to separate logic
+- use of Checkbox and useState hook
+- update an item in a state array
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
