@@ -3,6 +3,7 @@ import _ from "lodash";
 
 import Products from "./Products";
 import img from "./IMG_1844.jpg";
+import { Button } from "@material-ui/core";
 // const img = "./IMG_1844.jpg";
 
 const initialData = [
@@ -28,6 +29,16 @@ const ProductsContainer = props => {
     setData(clonedData);
   };
 
+  // filter the checked products
+  const handleSubmit = () => {
+    console.log("Submit");
+    console.log(
+      "selected=" +
+        _.filter(data, d => {
+          return d.checked;
+        }).length
+    );
+  };
   return (
     <div>
       <Products maxWidth={300} data={data} handleClick={handleClick} grid={false}></Products>
@@ -39,6 +50,9 @@ const ProductsContainer = props => {
         handleClick={handleClick}
         grid={false}
       ></Products>
+      <Button variant="contained" color="primary" onClick={handleSubmit}>
+        Submit
+      </Button>
     </div>
   );
 };
