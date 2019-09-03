@@ -2,10 +2,16 @@ import React, { useState, useContext, useEffect } from "react";
 import _ from "lodash";
 
 import Products from "./Products";
+import img from "./IMG_1844.jpg";
+// const img = "./IMG_1844.jpg";
+
 const initialData = [
-  { name: "Bob", checked: true, image: "./IMG_1844.jpg" },
-  { name: "Lisa", checked: false, image: "./IMG_1844.jpg" },
-  { name: "Rodney", checked: false, image: "./IMG_1844.jpg" }
+  { name: "Bob", checked: true, image: img },
+  { name: "Lisa", checked: false, image: img },
+  { name: "Rodney", checked: false, image: img },
+  { name: "Scott", checked: true, image: img },
+  { name: "Tom", checked: false, image: img },
+  { name: "Billy", checked: false, image: img }
 ];
 const ProductsContainer = props => {
   const [data, setData] = useState(initialData);
@@ -24,13 +30,14 @@ const ProductsContainer = props => {
 
   return (
     <div>
-      <Products maxWidth={300} data={data} handleClick={handleClick}></Products>
+      <Products maxWidth={300} data={data} handleClick={handleClick} grid={false}></Products>
       <Products
         maxWidth={300}
         data={data.filter(d => {
           return d.checked;
         })}
         handleClick={handleClick}
+        grid={false}
       ></Products>
     </div>
   );
